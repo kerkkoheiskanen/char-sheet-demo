@@ -1,0 +1,20 @@
+{
+  "apiKey": "AIzaSyCLq1wHGGkWFpIA67Lavx8jsoJSZIsNlQ8",
+  "authDomain": "herogritsheet.firebaseapp.com",
+  "projectId": "herogritsheet",
+  "storageBucket": "herogritsheet.appspot.com",
+  "messagingSenderId": "793135808536",
+  "appId": "1:793135808536:web:39dd05ad1a0830ce6f036d",
+  "measurementId": "G-Y948XY1CND",
+  "type": "service_account",
+  "BasePath": "https://herogritsheet-default-rtdb.europe-west1.firebasedatabase.app/",
+  "project_id": "herogritsheet",
+  "private_key_id": "ef1555e516c37fa0fae2ad8779ab9ccada4799e7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDtIAvaHUShyd2u\n8lzhT/TgjnE5wOkEDqXD5X3J933BtpgTU7ufxjnZ3Y3l08JTJdSLUckMMQQVrM3Q\nnVUWqqAiOpAYfsKolClaVLcLoqV19kgv775TVwDH9xoxNw9wDtqFkKM9nEna9zcv\naOC6JO6jJ7/+t3ha8rZS5NalzpmElSAtth67ToyO766o11sjJwaveWi5u7Orv9f/\nxrEE4b/UPYkJ9ocki47pb5gxzD/4uhTYtfq1pUvJW1QrtirkAsphT13moyEbv63z\nqs0fQynbzBE1oi9eBlqLJ5VjmgoRrxl4R5c8wzXPWDIFgqjWmirXDBHv8/JR+c5N\n1iCMkpcPAgMBAAECggEAQAF4cYWY8vrkRcbR31ePx9VrJqW1wAycHgaiL5QIc/Nv\nlTfy2yvMjcxJ8xF30K3Tc0++LvZEHf2pCHiPcTDZTKP2JUaCELL9fo6DYjai5vZ1\ngcr62tAPO+qtPT+ZgSvhPFBQX98B6IL2eGuczWIOsCeYoY6whAwjvrhaYCMmOSzq\nmlFexNaepjVws3PBXDbDQUIp4x0IE/hacSDVodzhbEtBBbPrfaaxTOpWuhaDwJKN\n/pQ2exT79k/6RJEEMzZl0B3Qyzjx1FA3icL3MSI+c5cz6xqWU5isuOZvYhgCEEgh\nAHxtDh/B9GZuVm6mm/heVqQ4Co/sH33PA27wp4qp4QKBgQD7pPBrruuFSQp/qyAO\nJTOIVHX/+CEPaScWldVfIFXHY787XVd6Ges1T+D/QAHuSNujiaC0dUuXkqtDiSQr\nji3JWCNDZUAvcQ7DwsEDuSnFRRI8rq1xxgMdMpBUg/q+gINpmFJ6yWZOmMiGE/gS\nvKO0MU2y5SiiWuX7g9JlyQxDVwKBgQDxOsWCkOVz2tWKjbNLfMb1SBfTiX/aKpFe\nfpbkKP1DadsL34wTeRlJ47bGfpRfMAYOp7QKNH3WqnXSzhxcwnmdz+ZPG8z5wKh3\nM4LD3ontzzo6X3EPAe3gCk/968IVEDorOHkgWZeKVUOZWYTXL13JARu7L2DoiBx/\nu+QfZCrvCQKBgDJP3N26wE4Kt3WlEiih2XbFZD5ELt/05yLF3D5DqcLOt5o35Fh+\nPB+Rk+uUsY4htQAycRYDaZSpd2JuVfP7Xj4mSA6efMG/efM7yfljmO1fDPFi/zyD\nGXZJ+L9dD9Hswdln4f24rKLEOztLXMrqOlS5ks5UsNYdFGRAC93b337LAoGAfHLH\nhm5eEYDp/YrQ3rbGpa/FqvoanWCskkVYbui+j9LCkMOJLlqhMz9pAco3nUvXNCRM\ne59M9DwIgPKYKzqhJ0skE9fRzV8ZCjXm1kmueqMX9Rlb6FQkdhqb3fGMtPUkLTv7\nMTdHOLR4JVrLb4AeMB6EQfNVWWEu4q76Jz+z7pECgYA8mks7mkDwj977QR1r5y6B\n+9JGRPEkjnHpqwSHHohr5rg7hoFo75csJkn1PY2Om+dYP75RndmYkKeuEi+7CaM6\n1S88pSIED5Z1+IsMYnPujXrb3tJrair9kpXPj/vBKTIidxxitDpjukMi0CQoLWzP\nMFIIwACsz6bK8F49Z8p9Kw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-4wf03@herogritsheet.iam.gserviceaccount.com",
+  "client_id": "104810353586262326878",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-4wf03%40herogritsheet.iam.gserviceaccount.com"
+}

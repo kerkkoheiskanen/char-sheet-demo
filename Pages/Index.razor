@@ -1,0 +1,83 @@
+﻿@page "/"
+@using HeroGritSheet.Models
+@using HeroGritSheet.Data
+@using LiteDB.Async;
+@inject LiteDbContext DbContext
+
+@inject ICharacterRepository CharacterRepository
+
+<h1>HEROGRIT TURBO v.0.7.3</h1>
+
+<EditForm Model="@CharacterModel" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="name">Character Name:</label>
+        <InputText id="name" @bind-Value="CharacterModel.Name" />
+    </div>
+
+    <div>
+        <label for="physique">Physique:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Physique" />
+    </div>
+
+    <div>
+        <label for="physique">Fighting:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Fighting" />
+    </div>
+
+    <div>
+        <label for="physique">Precision:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Precision" />
+    </div>
+
+    <div>
+        <label for="physique">Instincts:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Instincts" />
+    </div>
+
+    <div>
+        <label for="physique">Intellect:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Intellect" />
+    </div>
+
+    <div>
+        <label for="physique">Resolve:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Resolve" />
+    </div>
+
+    <div>
+        <label for="physique">Empathy:</label>
+        <InputNumber id="physique" @bind-Value="CharacterModel.Empathy" />
+    </div>
+
+    <!-- Add other attribute inputs here -->
+
+    <div>
+        <label for="positive-drive">Drives:</label>
+        <InputText id="positive-drive" @bind-Value="CharacterModel.Drives" />
+    </div>
+
+
+    <button type="submit">Save</button>
+</EditForm>
+
+@if (IsSaved)
+{
+    <p>Character has been saved!</p>
+}
+
+@code {
+    private Character CharacterModel { get; set; } = new Character();
+    private bool IsSaved { get; set; }
+
+    private async Task OnValidSubmit()
+    {
+        // Save the character data to the database
+        await DbContext.AddCharacterAsync(CharacterModel);
+        await DbContext.SaveChangesAsync();
+
+        IsSaved = true;
+    }
+}
