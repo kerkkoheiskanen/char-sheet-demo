@@ -75,7 +75,7 @@
     private async Task OnValidSubmit()
     {
         // Save the character data to the database
-        using (var db = new LiteDatabase(@"wwwroot/db/HeroGritSheet.db"))
+        using (var db = new LiteDatabase(@"db/HeroGritSheet.db"))
         {
             // Get a collection (or create, if doesn't exist)
             var col = db.GetCollection<Character>("Characters");
