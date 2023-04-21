@@ -45,7 +45,7 @@
 
     private List<Character> GetCharacters()
     {
-        using var db = new LiteDatabase(@"C:\Temp\MyData.db");
+        using var db = new LiteDatabase(@"wwwroot/db/HeroGritSheet.db");
         var col = db.GetCollection<Character>("Characters");
         var results = col.FindAll();
         return results.ToList();
