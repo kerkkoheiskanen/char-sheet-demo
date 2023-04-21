@@ -1,7 +1,10 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700');
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,700&display=swap');
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f3f3f3;
 }
 
 h1:focus {
@@ -37,6 +40,138 @@ a, .btn-link {
 .validation-message {
     color: red;
 }
+
+/* Slightly medieval, reserved serif styles */
+.page {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: #5d5c61;
+}
+
+.sidebar .navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.sidebar .nav-link {
+    font-family: 'Cardo', serif;
+    color: #ffffff;
+}
+
+.sidebar .nav-link.active {
+    font-weight: bold;
+    background-color: #4e4d52;
+    color: #ffffff;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    font-family: 'Cardo', serif;
+    color: #4a4a4a;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #a0a0a0;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.character-tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.character-tables table {
+    margin: 1rem;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-tables th, .character-tables td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.character-tables th {
+    background-color: #a0a0a0;
+    color: white;
+    font-weight: bold;
+}
+
+.character-tables td {
+    background-color: #f0f0f0;
+}
+
+.character-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-form label {
+    display: block;
+    margin-top: 1rem;
+}
+
+.character-form input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+}
+
+.character-form button[type="submit"] {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1b6ec2;
+    border: none;
+    cursor: pointer;
+}
+
+.character-form button[type="submit"]:hover {
+    background-color: #1861ac;
+}
+
+
+/* End of slightly medieval, reserved serif styles */
 
 #blazor-error-ui {
     background: lightyellow;

@@ -1,83 +1,53 @@
 ﻿@page "/"
 @using HeroGritSheet.Models
 @using HeroGritSheet.Data
-@using LiteDB.Async;
-@inject LiteDbContext DbContext
-
-@inject ICharacterRepository CharacterRepository
+@using LiteDB.Async
+@using LiteDB
 
 <h1>HEROGRIT TURBO v.0.7.3</h1>
 
-<EditForm Model="@CharacterModel" OnValidSubmit="OnValidSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div>
-        <label for="name">Character Name:</label>
-        <InputText id="name" @bind-Value="CharacterModel.Name" />
-    </div>
-
-    <div>
-        <label for="physique">Physique:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Physique" />
-    </div>
-
-    <div>
-        <label for="physique">Fighting:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Fighting" />
-    </div>
-
-    <div>
-        <label for="physique">Precision:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Precision" />
-    </div>
-
-    <div>
-        <label for="physique">Instincts:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Instincts" />
-    </div>
-
-    <div>
-        <label for="physique">Intellect:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Intellect" />
-    </div>
-
-    <div>
-        <label for="physique">Resolve:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Resolve" />
-    </div>
-
-    <div>
-        <label for="physique">Empathy:</label>
-        <InputNumber id="physique" @bind-Value="CharacterModel.Empathy" />
-    </div>
-
-    <!-- Add other attribute inputs here -->
-
-    <div>
-        <label for="positive-drive">Drives:</label>
-        <InputText id="positive-drive" @bind-Value="CharacterModel.Drives" />
-    </div>
-
-
-    <button type="submit">Save</button>
-</EditForm>
-
-@if (IsSaved)
-{
-    <p>Character has been saved!</p>
-}
+<div class="character-tables">
+    @foreach (Character character in Characters)
+    {
+        <table>
+            <tbody>
+                <tr><th>Name</th><td>@character.Name</td></tr>
+                <tr><th>Physique</th><td>@character.Physique</td></tr>
+                <tr><th>Fighting</th><td>@character.Fighting</td></tr>
+                <tr><th>Precision</th><td>@character.Precision</td></tr>
+                <tr><th>Instincts</th><td>@character.Instincts</td></tr>
+                <tr><th>Resolve</th><td>@character.Resolve</td></tr>
+                <tr><th>Empathy</th><td>@character.Empathy</td></tr>
+                <tr><th>Intellect</th><td>@character.Intellect</td></tr>
+                <tr><th>Drives</th><td>@character.Drives</td></tr>
+                <tr><th>Heritage</th><td>@character.Heritage</td></tr>
+                <tr><th>Profession</th><td>@character.Profession</td></tr>
+                <tr><th>Inventory</th><td>@character.Inventory</td></tr>
+                <tr><th>Maxload</th><td>@character.Maxload</td></tr>
+                <tr><th>Currentload</th><td>@character.Currentload</td></tr>
+                <tr><th>Experience</th><td>@character.Experience</td></tr>
+                <tr><th>CurrentWoundStage</th><td>@character.CurrentWoundStage</td></tr>
+                <tr><th>MaxStamina</th><td>@character.MaxStamina</td></tr>
+                <tr><th>CurrentStamina</th><td>@character.CurrentStamina</td></tr>
+                <tr><th>Coin</th><td>@character.Coin</td></tr>
+            </tbody>
+        </table>
+    }
+</div>
 
 @code {
-    private Character CharacterModel { get; set; } = new Character();
-    private bool IsSaved { get; set; }
+    private List<Character> Characters { get; set; } = new List<Character>();
 
-    private async Task OnValidSubmit()
+    protected override void OnInitialized()
     {
-        // Save the character data to the database
-        await DbContext.AddCharacterAsync(CharacterModel);
-        await DbContext.SaveChangesAsync();
+        Characters = GetCharacters();
+    }
 
-        IsSaved = true;
+    private List<Character> GetCharacters()
+    {
+        using var db = new LiteDatabase(@"C:\Temp\MyData.db");
+        var col = db.GetCollection<Character>("Characters");
+        var results = col.FindAll();
+        return results.ToList();
     }
 }

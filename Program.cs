@@ -1,13 +1,11 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using HeroGritSheet.Data.Interfaces;
 using HeroGritSheet.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using LiteDB;
-using LiteDB.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,14 +15,11 @@ builder.Configuration.AddJsonFile("appsettings.json");
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+//builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient(); // Register HttpClient without specifying the BaseAddress
-builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
-builder.Services.AddSingleton<LiteDbContext>();
-builder.Services.AddDbContext<LiteDbContext>(options =>
-    options.UseLiteDatabase(builder.Configuration.GetConnectionString("LiteDBConnection")));
+//builder.Services.AddSingleton<ILiteDbContext, LiteDbContext>();
+//builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
 
-builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
