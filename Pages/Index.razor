@@ -1,8 +1,8 @@
 ﻿@page "/"
 @using HeroGritSheet.Models
 @using HeroGritSheet.Data
-@using LiteDB.Async
-@using LiteDB
+@using BlazorServerApp.DataAccess
+@inject MongoDbService MongoDbService
 
 <h1>HEROGRIT TURBO v.0.7.3</h1>
 
@@ -40,14 +40,6 @@
 
     protected override void OnInitialized()
     {
-        Characters = GetCharacters();
-    }
-
-    private List<Character> GetCharacters()
-    {
-        using var db = new LiteDatabase(@"db/HeroGritSheet.db");
-        var col = db.GetCollection<Character>("Characters");
-        var results = col.FindAll();
-        return results.ToList();
+        Characters = MongoDbService.GetCharacters();
     }
 }
